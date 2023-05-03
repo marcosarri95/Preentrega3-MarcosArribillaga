@@ -1,13 +1,3 @@
-class cliente{
-    constructor(nombre, apellido, DNI, fnac ,nacionalidad){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.DNI = DNI;
-        this.fnac = fnac;
-        this.nacionalidad = nacionalidad;
-    }
-    
-}
 
 class tarjeta{
     constructor(nTarjeta, fVenc, NTitular, codSeg){
@@ -59,7 +49,7 @@ function solicitaDatosTarjeta(){
         localStorage.setItem("tarjeta", enJSON);
         localStorage.setItem("MetodoPago", menu.value);
         localStorage.setItem("PrecioViaje", Math.round(valorTotal*(1+(interes/100))))
-        //document.location.href = "./comprar.html";
+        document.location.href = "./Personas.html";
      
        }
 

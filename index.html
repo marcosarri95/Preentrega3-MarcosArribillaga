@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheapfly ✈ </title>
+    <link rel="stylesheet" href="styles.css">
+    
+  </head>
+  <body>
+
+    <div class="header">
+        Los vuelos mas baratos del mercado!
+    </div>
+    
+        <div class="principal">
+
+          <div id="dolar"></div>
+
+                      <div class="menu">
+
+                                  <div class="eleccion"> 
+
+                                                        <div class="oVuelo">
+                                                                  <label>Elije tu origen:</label>
+                                                                  <select name="Origen" id="origen"> 
+                                                                  <option value="Seleccionar">Seleccionar</option>
+                                                                  </select>
+
+                                                                  <label for="start">Fecha de despegue:</label>
+                                                                  <input type="date" id="start" name="trip-start">
+                                                                  <div id="error1"></p>
+                                                                  
+                                                        </div>
+                                                        <div class="fVuelo">
+                                                                <label>Elije tu destino:</label>
+                                                                <select name="Destinos" id="destinos">
+                                                                <option value="Seleccionar">Seleccionar</option>
+                                                                </select>
+
+                                                                <label for="start">Fecha de vuelta:</label>
+                                                                <input type="date" id="end" name="trip-end">
+                                                                <div id="error2"></p>
+                                                        </div>
+                                    
+                                  </div>
+                                  
+                                  <div class="cantPasajes">
+                                    <p>Cantidad de pasajes:</p>
+                                    <input type="number" value="" id="cantPersonas">
+                                    <div id="error3"></>
+                                  </div>
+                  
+                                  <div class="principal2">
+                                    <button type="submit" id="btnBuscar">
+                                      Buscar
+                                    </button>  
+                                  </div>
+                       </div>
+        </div>
+   
+    <div class="footer">
+        <div class="corpy">Copyright © Marcos Arribillaga</div>
+    </div>
+
+  </body>
+
+  <script src='java.js' defer></script>
+</html>

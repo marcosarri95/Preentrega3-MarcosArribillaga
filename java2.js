@@ -8,6 +8,9 @@ class tarjeta{
     }
 }
 //<input type="date" id="end" name="trip-end"></input>
+
+
+//Funcion que solicita los datos de la tarjeta de cŕedito/debito y valida que los mismos sean correctos
 function solicitaDatosTarjeta(){
     let error=false;
     const nroTarjeta = document.getElementById("nroTarjeta");
@@ -43,13 +46,16 @@ function solicitaDatosTarjeta(){
        }
     
        if(error==false){
+
+        //si todo esta OK, genera un objeto de la clase tarjeta y luego almacena este mismo en el storage, junto con el método de pago elegido y el precio total del viaje
         const t = new tarjeta(nroTarjeta.value,vtoTarjeta.value,nyap.value,codS.value);
         
         enJSON = JSON.stringify(t);
         localStorage.setItem("tarjeta", enJSON);
         localStorage.setItem("MetodoPago", menu.value);
         localStorage.setItem("PrecioViaje", Math.round(valorTotal*(1+(interes/100))))
-        document.location.href = "./Personas.html";
+        //luego vamos a la siguiente pagina en la que mostramos los datos finales (java3.js)
+        document.location.href = "./personas.html";
      
        }
 

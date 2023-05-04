@@ -1,4 +1,4 @@
-
+///clase viaje
 class viaje{
     constructor(origen, destino, cantidad, fini, ffin){
         this.origen=origen.toUpperCase();
@@ -10,12 +10,16 @@ class viaje{
 
 }
 
+///Funcion que determina el valor del dolar turista
 function valordolar(){
     let dolarof = Math.round((Math.random()*100 + 200)*100)/100; //genera un valor de dolar oficial entre 200 y 300, con 2 decimales
     
     return Math.round((dolarof*1.3)*1.35);
 }
 
+
+///Funcion que determina si los campos rellenados son correctos, crea el objeto y lo almacena para poder reutilizarlo luego
+/// una vez que está todo OK, pasa a la siguiente página
 function cambiarPagina (){
     let error = false;
     let origen = document.getElementById("origen");
@@ -44,6 +48,7 @@ function cambiarPagina (){
     const via = new viaje(origen.value, destinos.value, cantidad.value, fechaIni.value, fechaFin.value);
     enJSON = JSON.stringify(via);
     localStorage.setItem("viaje", enJSON);
+    //luego de esto pasamos a la siguiente oagina donde compraremos el viaje (java2.js)
     document.location.href = "./comprar.html";
    }
 
@@ -60,6 +65,7 @@ let malaEleccion = false;
 let bandera = false;
 const arrib = ["BUENOS AIRES", "TENESSE", "NEW YORK", "PARANA","CORDOBA", "ROSARIO", "MOSKU","BARCELONA", "MADRID"];
 
+//rellenamos el input con las ciudades de vuelo
 const menu1 = document.getElementById("origen");
 for (let i = 0; i < arrib.length; i++) {
     const option = document.createElement('option');
@@ -67,6 +73,8 @@ for (let i = 0; i < arrib.length; i++) {
     option.text = arrib[i];
     menu1.appendChild(option);    
 }
+
+//rellenamos el input con las ciudades de vuelo
 const menu2 = document.getElementById("destinos");
 for (let i = 0; i < arrib.length; i++) {
     const option = document.createElement('option');
@@ -75,11 +83,13 @@ for (let i = 0; i < arrib.length; i++) {
     menu2.appendChild(option);    
 }
 
+//llamamos la funcion valordolar y luego de esto lo guardamos en el storage
 const dolarof = valordolar();
 const dol = document.getElementById('dolar');
 dol.innerHTML = "El valor del dolar turista es de $"+dolarof;
 localStorage.setItem('dolarTurista', dolarof);
 
+//generamos un event listener al botón para que se ejecute por medio del click del mismo
 let btn = document.getElementById("btnBuscar");
 btn.addEventListener("click", cambiarPagina);
 

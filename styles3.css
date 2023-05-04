@@ -24,7 +24,22 @@ body {
 
     /*inicio principal*/
 
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+    }
 
+    #datosTarjeta, #datosViaje, #datosPersonas{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+    }
   
     /*fin principal*/
 
